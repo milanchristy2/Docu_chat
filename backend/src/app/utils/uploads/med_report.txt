@@ -1,0 +1,48 @@
+Patient Name: John Doe
+Patient ID: 123456
+Date of Report: 09-Feb-2026
+Referring Physician: Dr. Jane Smith
+Department: Pulmonology
+
+Clinical Summary:
+The patient presented with persistent cough for the last six weeks, associated with intermittent low-grade fever, night sweats, and unintentional weight loss of approximately 5 kg. The patient reports fatigue and mild chest discomfort. No history of recent travel or exposure to known tuberculosis cases. Past medical history is significant for childhood asthma, but otherwise unremarkable. No known drug allergies.
+
+Physical Examination:
+On examination, the patient appeared moderately ill and cachectic. Vital signs were within normal limits except for a low-grade fever of 37.8°C. Respiratory examination revealed decreased breath sounds in the upper lobes, with occasional crepitations bilaterally. No cyanosis, clubbing, or edema was observed. Cardiovascular, abdominal, and neurological examinations were unremarkable.
+
+Investigations:
+1. Chest X-ray: Demonstrated patchy consolidation and cavitary lesions in the upper lobes, consistent with active pulmonary tuberculosis.
+2. Sputum Analysis: Ziehl-Neelsen staining revealed acid-fast bacilli. Culture confirmed Mycobacterium tuberculosis.
+3. Complete Blood Count: Mild leukocytosis (WBC: 11,200/mm³), hemoglobin 11.5 g/dL, platelets within normal range.
+4. ESR & CRP: Elevated erythrocyte sedimentation rate (45 mm/hr) and C-reactive protein (20 mg/L), indicating active inflammation.
+5. Mantoux Test: Positive with 15 mm induration at 72 hours.
+6. HIV Test: Negative.
+
+Diagnosis:
+Active pulmonary tuberculosis.
+
+Treatment Plan:
+1. Initiate standard anti-tuberculosis therapy (ATT) consisting of:
+   - Intensive Phase (2 months): Isoniazid, Rifampicin, Pyrazinamide, Ethambutol.
+   - Continuation Phase (4 months): Isoniazid and Rifampicin.
+2. Directly Observed Therapy (DOT) recommended to ensure adherence.
+3. Nutritional support and counseling on infection control practices.
+4. Monitor liver function tests and complete blood count periodically during therapy.
+
+Follow-Up:
+The patient should be reviewed monthly during treatment, with sputum microscopy repeated at 2, 4, and 6 months to assess response. Chest X-ray to be repeated at the end of therapy or sooner if clinical deterioration occurs. Patient education provided regarding cough etiquette, isolation until non-infectious, and importance of completing the full course of therapy.
+
+Prognosis:
+With adherence to the prescribed ATT regimen, the patient has a favorable prognosis. Early detection and strict compliance with treatment significantly reduce the risk of complications and transmission to contacts.
+
+Additional Notes:
+- Patient advised to avoid smoking and exposure to crowded, poorly ventilated spaces.
+- Family members to be screened for latent TB infection.
+- Patient encouraged to maintain a high-protein diet to improve overall health and immune response.
+
+Prepared by:
+Dr. Jane Smith, MD
+Pulmonology Department
+City Hospital, Newtown
+
+(End of Report)

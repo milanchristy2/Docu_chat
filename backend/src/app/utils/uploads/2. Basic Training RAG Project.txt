@@ -1,0 +1,112 @@
+﻿Project Title: 
+DocuChat - A RAG-based Document Q&A System
+Objective
+Build a small RAG pipeline where interns can upload documents (e.g., PDFs or text files) and query them conversationally using an LLM that retrieves relevant context from a vector database before answering.
+
+Duration: 
+1-2 Weeks
+
+Tech Stack (Suggested)
+● Backend: Python + FastAPI
+
+● Vector Store: FAISS or ChromaDB
+
+● LLM API: OpenAI API / HuggingFace (local models for advanced tasks)
+
+● Embeddings: SentenceTransformers (e.g., all-MiniLM-L6-v2)
+
+● Frontend (optional): Streamlit or simple React app
+
+● Data: Public PDFs (Wikipedia pages, research papers, company docs)
+
+
+Learning Goals
+1. Understand how RAG bridges knowledge between local data and an LLM.
+
+2. Learn to chunk, embed, and store documents in a vector DB.
+
+3. Build an end-to-end query pipeline integrating LLM inference and retrieval.
+
+4. Explore evaluation and optimization of RAG pipelines.
+
+
+Phase-wise Plan
+Week 1: Foundations (Setup & Retrieval)
+Goals:
+● Understand RAG pipeline basics.
+
+● Work on document ingestion, chunking, and embedding.
+
+Tasks:
+1. Set up Python environment and dependencies.
+
+2. Write a script to:
+
+○ Load and parse documents (PDF/TXT).
+
+○ Split text into chunks using a tokenizer or simple splitter.
+
+○ Generate embeddings using a model (SentenceTransformers or OpenAI embeddings).
+
+○ Store embeddings in FAISS/ChromaDB.
+
+3. Build a simple query retrieval function that returns top-k chunks.
+
+Deliverable:
+A working retriever script that can return relevant text chunks given a query.
+
+Week 1: RAG Integration (Augmentation + Response)
+Goals:
+● Integrate retrieval with LLM response generation.
+
+● Build an interactive Q&A system.
+
+Tasks:
+1. Implement query → retrieve → augment → LLM response pipeline.
+
+2. Add FastAPI endpoints:
+
+○ /upload: Upload new documents.
+
+○ /query: Submit user question and get LLM answer.
+
+3. Build a simple Streamlit or CLI interface for testing.
+
+4. Experiment with prompt templates for better responses.
+
+Deliverable:
+End-to-end working RAG prototype (query answers grounded in uploaded docs).
+
+Week 2: Optimization & Evaluation (Advanced Concepts)
+Goals:
+● Improve retrieval and context handling.
+
+● Evaluate quality of answers.
+
+Tasks:
+1. Add metadata filtering (e.g., per-document search).
+
+2. Experiment with different embedding models and chunk sizes.
+
+3. Implement RAG evaluation metrics (e.g., similarity score, hallucination rate).
+
+4. Add logging and basic performance tracking (retrieval time, latency).
+
+Deliverable:
+Optimized and evaluated RAG pipeline with metrics and documentation.
+
+Stretch Goals
+CategoryStretch TaskDescriptionUI/UXBuild a full frontend chat interfaceUse Streamlit or React to create a chatbot interface for document chatVector DBIntegrate managed DBReplace FAISS with Pinecone, Weaviate, or MilvusLLM EnhancementImplement Query RewritingUse an LLM to reformulate user queries before retrievalMemoryAdd conversation memoryMaintain chat context for multi-turn queriesEvaluationBuild automated RAG evaluatorCompare LLM answer to gold-standard summariesPerformanceParallelize embeddingsUse async or batch processing for large docsSecurityAdd document access controlRestrict retrieval based on user roles
+Final Deliverables
+● Working RAG app (API + optional frontend)
+
+● Short project report (architecture, results, learnings)
+
+● Presentation/demo (5-10 mins)
+
+● GitHub repo with clean commits and README
+
+
+Evaluation Criteria
+CriteriaWeightFunctional RAG Pipeline40%Code Quality & Documentation20%Innovation / Stretch Goals20%Presentation & Clarity10%Collaboration & Version Control10%
+
