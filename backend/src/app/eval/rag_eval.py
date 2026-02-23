@@ -3,11 +3,17 @@ from ragas import evaluate
 from langchain_ollama import OllamaLLM,OllamaEmbeddings
 from ragas.llms import LangchainLLMWrapper
 from ragas.embeddings import LangchainEmbeddingsWrapper
-from typing import Any
-from ragas.metrics import faithfulness,answer_relevancy,context_precision,context_recall
+from typing import Any,cast
+from ragas.metrics import faithfulness,answer_relevancy
 from datasets import Dataset
-
-def evaluate_rag(questions,answers,contexts,ground_truth)->Any:
+METRIC_MAP={
+    'faithfulness':faithfulness,
+    'answer_relevancy':answer_relevancy
+}
+def evaluate_rag(questions,answers,contexts,ground_truth,metrics=None):
+    if metrics is None:
+        metrics=['faithfulness','answer_relevancy']
+    selected_metrics=[METRIC_MAP[m] for m in metrics]
     data={
         "question":questions,
         "answer":answers,
@@ -21,15 +27,12 @@ def evaluate_rag(questions,answers,contexts,ground_truth)->Any:
     eval_embeddings=LangchainEmbeddingsWrapper(embeddings)
     res=evaluate(
         dataset,
-        metrics=[
-            faithfulness,
-            answer_relevancy,
-            context_precision,
-            context_recall
-        ],
+        metrics=selected_metrics,
         llm=evaluator_llm,
         embeddings=eval_embeddings
     )
+    if hasattr(res,"result"):
+        res=cast(Any,res).result()
 
     return res
 

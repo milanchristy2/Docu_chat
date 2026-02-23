@@ -12,10 +12,11 @@ router=APIRouter(prefix="/chats")
 def chat(chat_id:UUID,payload:MessageCreate,db:Session=Depends(get_db)):
     if payload.chat_id!=chat_id:
         raise HTTPException(status_code=400,detail="chat id mismatch")
-    answer=handle_chat(
+    answer,_=handle_chat(
         db=db,
         chat_id=str(chat_id),
         question=payload.content,
+        document_id=payload.document_id
     )
     if not answer:
         raise HTTPException(status_code=404,detail="conversation not found")

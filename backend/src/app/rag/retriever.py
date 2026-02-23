@@ -11,5 +11,6 @@ vectorstore=Chroma(
     embedding_function=embeddings
 )
 
-retreiver=vectorstore.as_retriever(search_kwargs={"k":5})
+# retreiver=vectorstore.as_retriever(search_type="mmr",search_kwargs={"k":3,"fetch_k":10})
+
 

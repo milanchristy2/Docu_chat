@@ -14,7 +14,9 @@ class Chats(Base):
     __tablename__="chats"
     id:Mapped[uuid.UUID]=mapped_column(UUID(as_uuid=True),primary_key=True,index=True,default=uuid.uuid4)
     user_id:Mapped[uuid.UUID]=mapped_column(UUID(as_uuid=True),nullable=False,index=True)
+    document_id:Mapped[int]=mapped_column(ForeignKey("documents.id"),nullable=False,index=True)
     messages:Mapped[list["Messages"]]=relationship("Messages",back_populates="chats",cascade="all, delete-orphan")
+    document:Mapped["Document"]=relationship("Document")
 
 class Messages(Base):
     __tablename__="messages"

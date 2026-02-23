@@ -14,7 +14,7 @@ export async function uploadDocument(file){
     return response.json();
 }
 
-export async function queryDocument(chatId,question){
+export async function queryDocument(chatId,question,documentId){
     const response=await fetch(
         `${BASE_URL}/query/`,{
             method:'POST',
@@ -23,7 +23,8 @@ export async function queryDocument(chatId,question){
             },
             body:JSON.stringify({
                 chat_id:chatId,
-                content:question
+                content:question,
+                document_id:documentId
             }),
         }
     );

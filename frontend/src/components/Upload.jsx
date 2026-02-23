@@ -1,15 +1,18 @@
 import { useState } from "react";
 import { uploadDocument } from "../services/api";
 
-function Upload() {
+function Upload({ onUploadSuccess }) {
   const [file, setFile] = useState(null);
   const [message, setMessage] = useState("");
 
   const handleUpload = async () => {
     if (!file) return;
 
-    await uploadDocument(file);
+    const result = await uploadDocument(file);
     setMessage("Uploaded successfully");
+    if (onUploadSuccess) {
+      onUploadSuccess(result.document_id);
+    }
   };
 
   return (

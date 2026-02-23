@@ -1,16 +1,31 @@
 import { useState } from "react";
 import { queryDocument } from "../services/api";
 
-function Chat() {
+function Chat({ documentId }) {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const chatId = "3fa85f64-5717-4562-b3fc-2c963f66afa6";
 
   const handleAsk = async () => {
     if (!question.trim()) return;
+    if (!documentId) {
+      setError("Please upload a document first.");
+      return;
+    }
 
-    const response = await queryDocument(chatId, question);
-    setAnswer(response.content);
+    setLoading(true);
+    setError("");
+    setAnswer("");
+    
+    try {
+      const result = await queryDocument(chatId, question, documentId);
+      setAnswer(result.content || result.answer || "");
+    } catch {
+      setError("Failed to get response. Please try again.");
+    }
+    setLoading(false);
   };
 
   return (
@@ -25,17 +40,20 @@ function Chat() {
         onChange={(e) => setQuestion(e.target.value)}
       />
 
-      <button className="btn btn-success w-100 mb-4" onClick={handleAsk}>
-        Ask
+      <button 
+        className="btn btn-success w-100 mb-4" 
+        onClick={handleAsk}
+        disabled={loading}
+      >
+        {loading ? "Loading..." : "Ask"}
       </button>
 
+      {error && <div className="alert alert-danger">{error}</div>}
       {answer && (
-        <>
-          <h5>Answer:</h5>
-          <div className="border rounded p-3 bg-light">
-            {answer}
-          </div>
-        </>
+        <div className="card bg-light p-3">
+          <h5 className="text-primary">Answer:</h5>
+          <p>{answer}</p>
+        </div>
       )}
     </div>
   );
