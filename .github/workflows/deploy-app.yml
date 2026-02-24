@@ -17,19 +17,18 @@ jobs:
             
             - name: Install dependencies
               run: | 
-                cd backend 
                 pip install -r requirements.txt
 
             - name: Run tests
               run: | 
-                cd backend 
-                pytest 
+                pytest
 
             - name: Build and Push Backend Docker Image
               uses: docker/build-push-action@v6
               with:
                 context: ./backend
-                push: true
+                push: false
+                load: true
                 tags: rag-backend:latest
 
     build-frontend:
@@ -47,19 +46,18 @@ jobs:
             
             - name: Install dependencies
               run: | 
-                cd frontend 
                 npm install 
             
             - name: Build frontend
               run: | 
-                cd frontend 
                 npm run build
 
             - name: Build and Push Frontend Docker Image
               uses: docker/build-push-action@v6
               with:
                 context: ./frontend
-                push: true
+                push: false
+                load: true
                 tags: rag-frontend:latest
 
 
