@@ -29,7 +29,8 @@ jobs:
             - name: Build and Push Backend Docker Image
               uses: docker/build-push-action@v6
               with:
-                context: ./backend
+                context: ./backend/src/app
+                dockerfile: ./backend/src/app/Dockerfile
                 push: false
                 load: true
                 tags: rag-backend:latest
